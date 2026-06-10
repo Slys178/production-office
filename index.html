@@ -778,7 +778,7 @@ function getDayStatus(init, date) {
   const key = fmtHolKey(date);
   const val = (holidayData[init] || {})[key] || '';
   if (!val) return 'full';
-  if (val === 'H')    return 'off';
+  if (val === 'H' || val === '2nd')    return 'off';
   if (val === 'B')    return 'bank';
   if (val === 'C')    return 'carrier'; // LA carrier — already factored into base rate
   if (val === 'h/am' || val === 'h/pm' || val === 'h') return 'half';
