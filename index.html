@@ -778,7 +778,8 @@ function getDayStatus(init, date) {
   const key = fmtHolKey(date);
   const val = (holidayData[init] || {})[key] || '';
   if (!val) return 'full';
-  if (val === 'H' || val === '2nd')    return 'off';
+  if (val === 'H')    return 'off';
+  if (val === '2nd')  return '2nd';
   if (val === 'B')    return 'bank';
   if (val === 'C')    return 'carrier'; // LA carrier — already factored into base rate
   if (val === 'h/am' || val === 'h/pm' || val === 'h') return 'half';
@@ -804,7 +805,7 @@ function calcCapacity(weekMon) {
       const status = getDayStatus(init, d);
       let stairs = 0;
 
-      if (status === 'off' || status === 'bank') {
+      if (status === 'off' || status === 'bank' || status === '2nd') {
         stairs = 0;
       } else if (status === 'half') {
         stairs = Math.round(base * 0.5);
@@ -940,6 +941,7 @@ async function renderPrediction() {
       else if (s === 'bank'){ cls = 'bank'; lbl = 'BH'; }
       else if (s === 'half'){ cls = 'half'; lbl = '½'; }
       else if (s === 'carrier'){ cls = 'carry'; lbl = 'C'; }
+      else if (s === '2nd') { cls = 'off';  lbl = '2nd'; }
       return `<div class="day-cell ${cls}" title="${fmtDate(d.date)}: ${d.stairs} stairs">${lbl}</div>`;
     }).join('');
 
