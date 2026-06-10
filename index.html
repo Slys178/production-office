@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,6 @@
     min-height: 100vh;
   }
 
-  /* ── HEADER ── */
   header {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -94,13 +94,11 @@
     letter-spacing: 0.05em;
   }
 
-  /* ── MAIN ── */
   main { padding: 24px; max-width: 1100px; margin: 0 auto; }
 
   .view { display: none; }
   .view.active { display: block; }
 
-  /* ── SECTION TITLES ── */
   .section-title {
     font-size: 11px;
     font-weight: 600;
@@ -110,7 +108,6 @@
     margin-bottom: 16px;
   }
 
-  /* ── CARDS ── */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -118,7 +115,6 @@
     padding: 20px;
   }
 
-  /* ── PREDICTION VIEW ── */
   .prediction-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -158,7 +154,6 @@
     margin-top: 6px;
   }
 
-  /* ── STATUS BANNER ── */
   .status-banner {
     border-radius: 10px;
     padding: 18px 24px;
@@ -169,9 +164,9 @@
     border: 1px solid transparent;
   }
 
-  .status-banner.green  { background: rgba(46,204,113,0.1);  border-color: rgba(46,204,113,0.3);  }
-  .status-banner.amber  { background: rgba(243,156,18,0.1);  border-color: rgba(243,156,18,0.3);  }
-  .status-banner.red    { background: rgba(231,76,60,0.1);   border-color: rgba(231,76,60,0.3);   }
+  .status-banner.green { background: rgba(46,204,113,0.1);  border-color: rgba(46,204,113,0.3); }
+  .status-banner.amber { background: rgba(243,156,18,0.1);  border-color: rgba(243,156,18,0.3); }
+  .status-banner.red   { background: rgba(231,76,60,0.1);   border-color: rgba(231,76,60,0.3);  }
 
   .status-dot {
     width: 12px; height: 12px;
@@ -179,20 +174,18 @@
     flex-shrink: 0;
   }
 
-  .green .status-dot  { background: var(--green); box-shadow: 0 0 8px var(--green); }
-  .amber .status-dot  { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
-  .red   .status-dot  { background: var(--red);   box-shadow: 0 0 8px var(--red);   }
+  .green .status-dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+  .amber .status-dot { background: var(--amber); box-shadow: 0 0 8px var(--amber); }
+  .red   .status-dot { background: var(--red);   box-shadow: 0 0 8px var(--red);   }
 
   .status-text { font-size: 15px; font-weight: 500; }
   .status-sub  { font-size: 12px; color: var(--muted); margin-top: 3px; }
 
-  /* ── CAPACITY BAR ── */
   .cap-bar-wrap { margin-bottom: 20px; }
   .cap-bar-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 12px; color: var(--muted); }
   .cap-bar-track { height: 10px; background: var(--border); border-radius: 99px; overflow: hidden; }
   .cap-bar-fill  { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
 
-  /* ── TEAM TABLE ── */
   .team-table { width: 100%; border-collapse: collapse; }
   .team-table th {
     text-align: left;
@@ -236,12 +229,12 @@
     color: var(--muted);
     border: 1px solid var(--border);
   }
-  .day-cell.off   { background: rgba(231,76,60,0.15);  color: var(--red);   border-color: rgba(231,76,60,0.3); }
-  .day-cell.half  { background: rgba(243,156,18,0.15); color: var(--amber); border-color: rgba(243,156,18,0.3); }
-  .day-cell.carry { background: rgba(240,165,0,0.1);   color: var(--accent); border-color: rgba(240,165,0,0.3); }
-  .day-cell.bank  { background: rgba(100,100,180,0.15);color: #9b9fe8; border-color: rgba(100,100,180,0.3); }
+  .day-cell.off    { background: rgba(231,76,60,0.15);   color: var(--red);    border-color: rgba(231,76,60,0.3);  }
+  .day-cell.half   { background: rgba(243,156,18,0.15);  color: var(--amber);  border-color: rgba(243,156,18,0.3); }
+  .day-cell.carry  { background: rgba(240,165,0,0.1);    color: var(--accent); border-color: rgba(240,165,0,0.3);  }
+  .day-cell.bank   { background: rgba(100,100,180,0.15); color: #9b9fe8;       border-color: rgba(100,100,180,0.3);}
+  .day-cell.second { background: rgba(100,180,100,0.15); color: #7ecf7e;       border-color: rgba(100,180,100,0.3);}
 
-  /* ── LOADS TABLE ── */
   .loads-table { width: 100%; border-collapse: collapse; }
   .loads-table th {
     text-align: left;
@@ -276,7 +269,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* ── FORM ── */
   .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr auto;
@@ -342,11 +334,7 @@
   }
   .btn-danger:hover { background: rgba(231,76,60,0.1); border-color: var(--red); }
 
-  /* ── LOG VIEW ── */
-  .log-grid {
-    display: grid;
-    gap: 10px;
-  }
+  .log-grid { display: grid; gap: 10px; }
 
   .log-card {
     background: var(--card);
@@ -368,11 +356,7 @@
 
   .log-meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
 
-  .log-assigned {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
+  .log-assigned { display: flex; gap: 8px; align-items: center; }
 
   .log-initials-select {
     background: var(--surface);
@@ -410,23 +394,12 @@
     cursor: pointer;
     transition: all 0.15s;
   }
-  .btn-log:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-log:hover  { border-color: var(--accent); color: var(--accent); }
   .btn-log.logged { background: rgba(46,204,113,0.1); border-color: rgba(46,204,113,0.3); color: var(--green); }
 
-  .logged-by {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-  }
+  .logged-by { display: flex; align-items: center; gap: 6px; font-size: 12px; }
 
-  /* ── WEEK NAV ── */
-  .week-nav {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
+  .week-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 
   .week-nav button {
     background: var(--card);
@@ -451,23 +424,19 @@
     padding: 5px 14px;
   }
 
-  /* ── LOADING / EMPTY ── */
-  .loading {
-    text-align: center;
+  .prog-week-note {
+    font-size: 11px;
     color: var(--muted);
-    font-size: 13px;
-    padding: 40px;
     font-family: var(--mono);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 12px;
   }
 
-  .empty {
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    padding: 30px;
-  }
+  .loading { text-align: center; color: var(--muted); font-size: 13px; padding: 40px; font-family: var(--mono); }
+  .empty   { text-align: center; color: var(--muted); font-size: 13px; padding: 30px; }
 
-  /* ── TOAST ── */
   #toast {
     position: fixed;
     bottom: 24px; right: 24px;
@@ -482,14 +451,9 @@
     transition: opacity 0.2s;
     z-index: 999;
   }
-  #toast.show { opacity: 1; }
+  #toast.show    { opacity: 1; }
   #toast.success { border-color: rgba(46,204,113,0.4); }
   #toast.error   { border-color: rgba(231,76,60,0.4);  }
-
-  .divider { height: 1px; background: var(--border); margin: 20px 0; }
-
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -502,16 +466,16 @@
     <span class="logo-sub">Production Office</span>
   </div>
   <nav>
-    <button class="active" onclick="showView('predict')">Prediction</button>
-    <button onclick="showView('loads')">Loads</button>
-    <button onclick="showView('log')">Team Log</button>
+    <button class="active" onclick="showView('predict', this)">Prediction</button>
+    <button onclick="showView('loads', this)">Loads</button>
+    <button onclick="showView('log', this)">Team Log</button>
   </nav>
   <div class="week-badge" id="header-date"></div>
 </header>
 
 <main>
 
-  <!-- ═══════════════════════════════════ PREDICTION VIEW ═══ -->
+  <!-- ══════════════════════ PREDICTION VIEW ══════════════════════ -->
   <div class="view active" id="view-predict">
 
     <div class="week-nav">
@@ -519,25 +483,25 @@
       <div class="week-display" id="week-label">Loading…</div>
       <button onclick="shiftWeek(1)">&#8594;</button>
       <button class="btn-primary" style="font-size:12px;padding:5px 14px;height:auto;" onclick="shiftToCurrentWeek()">This Week</button>
+      <div class="prog-week-note" id="prog-week-note"></div>
     </div>
 
     <div id="status-area"></div>
-
     <div class="prediction-grid" id="stat-cards"></div>
 
     <div class="card" style="margin-bottom:16px;">
       <div class="section-title">Capacity Used</div>
-      <div class="cap-bar-wrap" id="cap-bar-wrap"></div>
+      <div id="cap-bar-wrap"></div>
     </div>
 
     <div class="card">
       <div class="section-title">Team Breakdown — <span id="breakdown-week"></span></div>
-      <div id="team-breakdown"><div class="loading">Loading holiday data…</div></div>
+      <div id="team-breakdown"><div class="loading">Loading…</div></div>
     </div>
 
   </div>
 
-  <!-- ═══════════════════════════════════ LOADS VIEW ═══ -->
+  <!-- ══════════════════════ LOADS VIEW ══════════════════════ -->
   <div class="view" id="view-loads">
 
     <div class="week-nav">
@@ -574,7 +538,7 @@
 
   </div>
 
-  <!-- ═══════════════════════════════════ LOG VIEW ═══ -->
+  <!-- ══════════════════════ LOG VIEW ══════════════════════ -->
   <div class="view" id="view-log">
 
     <div class="week-nav">
@@ -585,7 +549,7 @@
     </div>
 
     <div class="card" style="margin-bottom:16px;padding:14px 20px;">
-      <div style="font-size:12px;color:var(--muted);">Programmers — select your initials and start time against each load you pick up. This is logged to the sheet.</div>
+      <div style="font-size:12px;color:var(--muted);">Select your initials and start time against each load you pick up.</div>
     </div>
 
     <div class="log-grid" id="log-list"><div class="loading">Loading loads…</div></div>
@@ -597,43 +561,42 @@
 <div id="toast"></div>
 
 <script>
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  CONFIG
-// ═══════════════════════════════════════════════════
-const API_KEY      = 'AIzaSyC7LqaHIyCp7qcHSbrC8EjufPD_qGiZD-M';
-const SHEET_ID     = '1NYHtbL_-mepijGGXT7LRetqhEttLyaMYzOcKHzPzvB8';
-const PLANNER_SHEET = 'Production_Planner'; // New sheet tab name
+// ═══════════════════════════════════════════
+const API_KEY        = 'AIzaSyC7LqaHIyCp7qcHSbrC8EjufPD_qGiZD-M';
+const SHEET_ID       = '1NYHtbL_-mepijGGXT7LRetqhEttLyaMYzOcKHzPzvB8';
+const PLANNER_SHEET  = 'Production_Planner';
+const SCRIPT_URL     = 'https://script.google.com/macros/s/AKfycbySSKSp6tvCdxxHQ0HscEgALFkIimWn1lVW06Ojod0BAE22l_DfSpz8UB8As0IpCFspmQ/exec';
 
-// Team capacity (stairs per day Mon-Thu / Fri)
+// Team: fullDay = Mon–Thu capacity, friday = Friday capacity
 const TEAM = {
   SF: { name: 'Simon Faulks',         fullDay: 50, friday: 34 },
-  LA: { name: 'Liam Aiello',          fullDay: 37, friday: 21 },  // carrier adjusted
+  LA: { name: 'Liam Aiello',          fullDay: 37, friday: 21 },
   DF: { name: 'Dominika Formanowicz', fullDay: 34, friday: 18 },
   AS: { name: 'Adam Stanislawski',    fullDay: 50, friday: 34 },
 };
 
-// Row indices in the 2026 holiday sheet (0-based after data rows)
-// We'll match by name substring
 const HOLIDAY_NAMES = {
-  SF: 'Simon Faulks',
-  LA: 'Liam Aiello',
-  DF: 'Dominika Formanowicz',
-  AS: 'Adam Stanislawski',
+  SF: 'Faulks',
+  LA: 'Aiello',
+  DF: 'Formanowicz',
+  AS: 'Stanislawski',
 };
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  STATE
-// ═══════════════════════════════════════════════════
-let currentWeekStart   = getMonday(new Date());
-let loadsWeekStart     = getMonday(new Date());
-let logWeekStart       = getMonday(new Date());
-let allLoads           = [];   // loaded from sheet
-let holidayData        = {};   // { 'SF': { '10/6/26': 'H', ... }, ... }
-let holidayLoaded      = false;
+// ═══════════════════════════════════════════
+let currentWeekStart = getMonday(new Date());
+let loadsWeekStart   = getMonday(new Date());
+let logWeekStart     = getMonday(new Date());
+let allLoads         = [];
+let holidayData      = {};
+let holidayLoaded    = false;
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  DATE HELPERS
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 function getMonday(d) {
   const dt = new Date(d);
   const day = dt.getDay();
@@ -655,10 +618,9 @@ function fmtDate(d) {
 
 function fmtWeekRange(mon) {
   const fri = addDays(mon, 4);
-  return `${fmtDate(mon)} – ${fmtDate(fri)}`;
+  return `w/c ${fmtDate(mon)}`;
 }
 
-// Format date as it appears in the holiday sheet: e.g. "10/6/26" (no leading zeros)
 function fmtHolKey(d) {
   const day   = d.getDate();
   const month = d.getMonth() + 1;
@@ -666,9 +628,13 @@ function fmtHolKey(d) {
   return `${day}/${month}/${year}`;
 }
 
-// Parse a date string like "10/6/26" or "10/06/2026"
 function parseSheetDate(s) {
   if (!s) return null;
+  // Handle ISO format yyyy-mm-dd from date input
+  if (s.includes('-') && s.length === 10) {
+    const [y, m, d] = s.split('-').map(Number);
+    return new Date(y, m - 1, d);
+  }
   const parts = s.trim().split('/');
   if (parts.length !== 3) return null;
   let [d, m, y] = parts.map(Number);
@@ -681,13 +647,12 @@ function isoDate(d) {
 }
 
 function weekDays(mon) {
-  // Returns Mon–Fri dates
   return [0,1,2,3,4].map(i => addDays(mon, i));
 }
 
-// ═══════════════════════════════════════════════════
-//  SHEETS API
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
+//  SHEETS READ API
+// ═══════════════════════════════════════════
 async function sheetsGet(range) {
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(range)}?key=${API_KEY}`;
   const r = await fetch(url);
@@ -696,40 +661,28 @@ async function sheetsGet(range) {
   return data.values || [];
 }
 
-async function sheetsAppend(values) {
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(PLANNER_SHEET)}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS&key=${API_KEY}`;
-  const r = await fetch(url, {
+// ═══════════════════════════════════════════
+//  APPS SCRIPT WRITE
+// ═══════════════════════════════════════════
+async function scriptPost(payload) {
+  const r = await fetch(SCRIPT_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ values })
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(payload)
   });
-  if (!r.ok) {
-    const err = await r.json();
-    throw new Error(err.error?.message || 'Write failed');
-  }
+  if (!r.ok) throw new Error('Script POST failed');
   return r.json();
 }
 
-async function sheetsUpdate(range, values) {
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(range)}?valueInputOption=USER_ENTERED&key=${API_KEY}`;
-  const r = await fetch(url, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ values })
-  });
-  if (!r.ok) throw new Error('Update failed');
-  return r.json();
-}
-
-// ═══════════════════════════════════════════════════
-//  LOAD HOLIDAY DATA (2026 sheet)
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
+//  LOAD HOLIDAY DATA
+// ═══════════════════════════════════════════
 async function loadHolidays() {
   if (holidayLoaded) return;
   try {
     const rows = await sheetsGet('2026!A1:ZZ20');
-    // Find the date header row (row index where cells look like dates d/m/yy)
-    // Dates start at column D (index 3) based on the sheet structure
+
+    // Find the date header row — cells matching d/m/yy pattern starting col D
     let dateRow = null, dateRowIdx = -1;
     for (let i = 0; i < rows.length; i++) {
       if (rows[i] && rows[i][3] && /^\d{1,2}\/\d{1,2}\/\d{2,4}$/.test(String(rows[i][3]).trim())) {
@@ -741,21 +694,21 @@ async function loadHolidays() {
 
     if (!dateRow) { console.warn('Holiday date row not found'); return; }
 
-    // Build date→colIndex map
+    // Build date string → column index map
     const dateMap = {};
     for (let c = 3; c < dateRow.length; c++) {
       const raw = String(dateRow[c] || '').trim();
       if (raw) dateMap[raw] = c;
     }
 
-    // For each team member, read their row
-    for (const [init, fullName] of Object.entries(HOLIDAY_NAMES)) {
+    // Read each team member's row
+    for (const [init, surname] of Object.entries(HOLIDAY_NAMES)) {
       holidayData[init] = {};
       for (let i = dateRowIdx + 1; i < rows.length; i++) {
         const row = rows[i];
         if (!row) continue;
-        const name = String(row[0] || '').trim();
-        if (name.toLowerCase().includes(fullName.split(' ')[1].toLowerCase())) {
+        const name = String(row[0] || '').trim().toLowerCase();
+        if (name.includes(surname.toLowerCase())) {
           for (const [dateStr, colIdx] of Object.entries(dateMap)) {
             const val = String(row[colIdx] || '').trim();
             if (val) holidayData[init][dateStr] = val;
@@ -770,28 +723,28 @@ async function loadHolidays() {
   }
 }
 
-// ═══════════════════════════════════════════════════
-//  GET STATUS FOR A PERSON ON A DATE
-//  Returns: 'full' | 'half' | 'off' | 'bank' | 'carrier'
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
+//  DAY STATUS FOR A PERSON
+//  Returns: 'full' | 'half' | 'off' | 'bank' | 'carrier' | '2nd'
+// ═══════════════════════════════════════════
 function getDayStatus(init, date) {
   const key = fmtHolKey(date);
   const val = (holidayData[init] || {})[key] || '';
-  if (!val) return 'full';
-  if (val === 'H')    return 'off';
-  if (val === '2nd')  return '2nd';
-  if (val === 'B')    return 'bank';
-  if (val === 'C')    return 'carrier'; // LA carrier — already factored into base rate
+  if (!val)                               return 'full';
+  if (val === 'H' || val === 'O')         return 'off';
+  if (val === 'B')                        return 'bank';
+  if (val === 'C')                        return 'carrier';
+  if (val === '2nd')                      return '2nd';
   if (val === 'h/am' || val === 'h/pm' || val === 'h') return 'half';
-  if (val === 'O')    return 'off';
   return 'full';
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  CAPACITY CALCULATION
-// ═══════════════════════════════════════════════════
-function calcCapacity(weekMon) {
-  const days = weekDays(weekMon);
+//  Pass the PROGRAMMING week (delivery week - 7 days)
+// ═══════════════════════════════════════════
+function calcCapacity(programmingWeek) {
+  const days = weekDays(programmingWeek);
   let total = 0;
   const perPerson = {};
 
@@ -801,16 +754,16 @@ function calcCapacity(weekMon) {
 
     days.forEach((d, idx) => {
       const isFriday = idx === 4;
-      const base = isFriday ? cfg.friday : cfg.fullDay;
-      const status = getDayStatus(init, d);
-      let stairs = 0;
+      const base     = isFriday ? cfg.friday : cfg.fullDay;
+      const status   = getDayStatus(init, d);
+      let stairs     = 0;
 
       if (status === 'off' || status === 'bank' || status === '2nd') {
         stairs = 0;
       } else if (status === 'half') {
         stairs = Math.round(base * 0.5);
       } else {
-        // carrier is already baked into LA's base rate
+        // 'full' or 'carrier' — carrier already baked into LA's base rate
         stairs = base;
       }
 
@@ -825,25 +778,26 @@ function calcCapacity(weekMon) {
   return { total, perPerson };
 }
 
-// ═══════════════════════════════════════════════════
-//  LOADS — READ FROM SHEET
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
+//  LOAD DATA FROM SHEET
+// ═══════════════════════════════════════════
 async function loadAllLoads() {
   try {
     const rows = await sheetsGet(`${PLANNER_SHEET}!A:H`);
     if (!rows || rows.length < 2) { allLoads = []; return; }
-    // Headers: LoadNum | Stairs | DeliveryDate | AddedDate | AssignedTo | StartTime | LoggedDate | RowNum
-    allLoads = rows.slice(1).map((r, i) => ({
-      rowNum:       i + 2, // 1-indexed, +1 for header
-      loadNum:      r[0] || '',
-      stairs:       parseInt(r[1]) || 0,
-      deliveryDate: r[2] || '',
-      addedDate:    r[3] || '',
-      assignedTo:   r[4] || '',
-      startTime:    r[5] || '',
-      loggedDate:   r[6] || '',
-      lateFlag:     r[7] || '',
-    }));
+    allLoads = rows.slice(1)
+      .filter(r => r && r[0]) // skip blank rows
+      .map((r, i) => ({
+        rowNum:       i + 2,
+        loadNum:      r[0] || '',
+        stairs:       parseInt(r[1]) || 0,
+        deliveryDate: r[2] || '',
+        addedDate:    r[3] || '',
+        assignedTo:   r[4] || '',
+        startTime:    r[5] || '',
+        loggedDate:   r[6] || '',
+        lateFlag:     r[7] || '',
+      }));
   } catch(e) {
     console.error('Load read failed:', e);
     allLoads = [];
@@ -851,9 +805,8 @@ async function loadAllLoads() {
 }
 
 function getLoadsForWeek(weekMon) {
-  const days = weekDays(weekMon);
-  const monStr = isoDate(days[0]);
-  const friStr = isoDate(days[4]);
+  const monStr = isoDate(weekMon);
+  const friStr = isoDate(addDays(weekMon, 4));
   return allLoads.filter(l => {
     const d = parseSheetDate(l.deliveryDate);
     if (!d) return false;
@@ -862,28 +815,36 @@ function getLoadsForWeek(weekMon) {
   });
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  RENDER PREDICTION
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 async function renderPrediction() {
-  document.getElementById('week-label').textContent = fmtWeekRange(currentWeekStart);
-  document.getElementById('breakdown-week').textContent = fmtWeekRange(currentWeekStart);
+  // Delivery week = currentWeekStart
+  // Programming week = the week BEFORE delivery
+  const deliveryWeek     = currentWeekStart;
+  const programmingWeek  = addDays(deliveryWeek, -7);
+
+  document.getElementById('week-label').textContent =
+    `Delivery ${fmtWeekRange(deliveryWeek)}`;
+  document.getElementById('prog-week-note').textContent =
+    `Programming ${fmtWeekRange(programmingWeek)}`;
+  document.getElementById('breakdown-week').textContent =
+    `Programming week — ${fmtWeekRange(programmingWeek)}`;
 
   await loadHolidays();
   await loadAllLoads();
 
-  const programmingWeek = addDays(currentWeekStart, -7);
   const { total: capacity, perPerson } = calcCapacity(programmingWeek);
-  const loads    = getLoadsForWeek(currentWeekStart);
+  const loads       = getLoadsForWeek(deliveryWeek);
   const totalStairs = loads.reduce((s, l) => s + l.stairs, 0);
-  const surplus  = capacity - totalStairs;
-  const pct      = capacity > 0 ? Math.min(100, Math.round((totalStairs / capacity) * 100)) : 0;
+  const surplus     = capacity - totalStairs;
+  const pct         = capacity > 0 ? Math.min(100, Math.round((totalStairs / capacity) * 100)) : 0;
 
   // Status banner
   let statusClass, statusMsg, statusSub;
   if (totalStairs === 0) {
     statusClass = 'amber';
-    statusMsg   = 'No loads entered for this week';
+    statusMsg   = 'No loads entered for this delivery week';
     statusSub   = 'Add loads in the Loads tab to see a prediction.';
   } else if (surplus >= 50) {
     statusClass = 'green';
@@ -908,20 +869,18 @@ async function renderPrediction() {
       </div>
     </div>`;
 
-  // Stat cards
   document.getElementById('stat-cards').innerHTML = `
     <div class="stat-card">
-      <div class="stat-label">Total Stairs This Week</div>
+      <div class="stat-label">Total Stairs to Deliver</div>
       <div class="stat-value">${totalStairs}</div>
       <div class="stat-sub">across ${loads.length} load${loads.length !== 1 ? 's' : ''}</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Available Capacity</div>
+      <div class="stat-label">Programming Capacity</div>
       <div class="stat-value" style="color:${surplus < 0 ? 'var(--red)' : 'var(--green)'}">${capacity}</div>
       <div class="stat-sub">${surplus >= 0 ? surplus + ' stairs spare' : Math.abs(surplus) + ' stairs over'}</div>
     </div>`;
 
-  // Capacity bar
   const barColor = surplus < 0 ? 'var(--red)' : surplus < 50 ? 'var(--amber)' : 'var(--green)';
   document.getElementById('cap-bar-wrap').innerHTML = `
     <div class="cap-bar-label"><span>${totalStairs} stairs required</span><span>${pct}% of capacity</span></div>
@@ -930,19 +889,19 @@ async function renderPrediction() {
     </div>
     <div class="cap-bar-label" style="margin-top:6px;"><span></span><span>${capacity} stairs available</span></div>`;
 
-  // Team breakdown table
-  const days = weekDays(programmingWeek);
+  // Team breakdown — shows PROGRAMMING week days
+  const days      = weekDays(programmingWeek);
   const dayLabels = ['Mon','Tue','Wed','Thu','Fri'];
 
-  let rows = Object.entries(perPerson).map(([init, data]) => {
+  const tbRows = Object.entries(perPerson).map(([init, data]) => {
     const dayCells = data.days.map((d, i) => {
       const s = d.status;
       let cls = '', lbl = dayLabels[i];
-      if (s === 'off')     { cls = 'off';   lbl = 'OFF'; }
-      else if (s === 'bank'){ cls = 'bank'; lbl = 'BH'; }
-      else if (s === 'half'){ cls = 'half'; lbl = '½'; }
-      else if (s === 'carrier'){ cls = 'carry'; lbl = 'C'; }
-      else if (s === '2nd') { cls = 'off';  lbl = '2nd'; }
+      if      (s === 'off')     { cls = 'off';    lbl = 'OFF'; }
+      else if (s === 'bank')    { cls = 'bank';   lbl = 'BH';  }
+      else if (s === 'half')    { cls = 'half';   lbl = '½';   }
+      else if (s === 'carrier') { cls = 'carry';  lbl = 'C';   }
+      else if (s === '2nd')     { cls = 'second'; lbl = '2nd'; }
       return `<div class="day-cell ${cls}" title="${fmtDate(d.date)}: ${d.stairs} stairs">${lbl}</div>`;
     }).join('');
 
@@ -956,27 +915,20 @@ async function renderPrediction() {
 
   document.getElementById('team-breakdown').innerHTML = `
     <table class="team-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Name</th>
-          <th>Days</th>
-          <th>Capacity</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
+      <thead><tr><th></th><th>Name</th><th>Days</th><th>Capacity</th></tr></thead>
+      <tbody>${tbRows}</tbody>
     </table>`;
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  RENDER LOADS
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 async function renderLoads() {
   document.getElementById('week-label-loads').textContent = fmtWeekRange(loadsWeekStart);
   await loadAllLoads();
 
   const loads = getLoadsForWeek(loadsWeekStart);
-  const el = document.getElementById('loads-list');
+  const el    = document.getElementById('loads-list');
 
   if (!loads.length) {
     el.innerHTML = '<div class="empty">No loads entered for this week. Add one above.</div>';
@@ -986,17 +938,10 @@ async function renderLoads() {
   const totalStairs = loads.reduce((s, l) => s + l.stairs, 0);
 
   let html = `<table class="loads-table">
-    <thead>
-      <tr>
-        <th>Load No.</th>
-        <th>Stairs</th>
-        <th>Delivery</th>
-        <th>Added</th>
-        <th>Assigned</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>`;
+    <thead><tr>
+      <th>Load No.</th><th>Stairs</th><th>Delivery</th>
+      <th>Added</th><th>Assigned</th><th></th>
+    </tr></thead><tbody>`;
 
   loads.forEach(l => {
     const late = l.lateFlag === 'LATE' ? '<span class="late-flag">LATE ADD</span>' : '';
@@ -1010,15 +955,11 @@ async function renderLoads() {
     </tr>`;
   });
 
-  html += `</tbody>
-    <tfoot>
-      <tr>
-        <td style="font-weight:600;color:var(--text);font-family:var(--mono);">Total</td>
-        <td style="font-weight:600;color:var(--accent);font-family:var(--mono);">${totalStairs}</td>
-        <td colspan="4"></td>
-      </tr>
-    </tfoot>
-  </table>`;
+  html += `</tbody><tfoot><tr>
+    <td style="font-weight:600;color:var(--text);font-family:var(--mono);">Total</td>
+    <td style="font-weight:600;color:var(--accent);font-family:var(--mono);">${totalStairs}</td>
+    <td colspan="4"></td>
+  </tr></tfoot></table>`;
 
   el.innerHTML = html;
 }
@@ -1032,25 +973,32 @@ async function addLoad() {
     showToast('Please fill in all fields.', 'error'); return;
   }
 
-  // Check if this delivery date is outside the "planned" window
-  // Flag as LATE if added after loads for that week already exist
-  const deliveryDate = new Date(delivery);
-  const weekMon      = getMonday(deliveryDate);
-  const existingForWeek = getLoadsForWeek(weekMon);
-  const lateFlag     = existingForWeek.length > 0 ? 'LATE' : '';
+  // Format delivery date as dd/mm/yyyy for display
+  const dObj    = new Date(delivery + 'T00:00:00');
+  const fmtDel  = `${String(dObj.getDate()).padStart(2,'0')}/${String(dObj.getMonth()+1).padStart(2,'0')}/${dObj.getFullYear()}`;
+
+  // Late flag — if other loads already exist for this delivery week, flag as LATE
+  const weekMon          = getMonday(dObj);
+  const existingForWeek  = getLoadsForWeek(weekMon);
+  const lateFlag         = existingForWeek.length > 0 ? 'LATE' : '';
 
   const today = new Date().toLocaleDateString('en-GB');
 
   try {
-    await sheetsAppend([[loadNum, stairs, delivery, today, '', '', '', lateFlag]]);
+    await scriptPost({
+      action: 'append',
+      sheet:  PLANNER_SHEET,
+      row:    [loadNum, stairs, fmtDel, today, '', '', '', lateFlag]
+    });
     showToast('Load added ✓', 'success');
     document.getElementById('inp-load-num').value = '';
     document.getElementById('inp-stairs').value   = '';
     document.getElementById('inp-delivery').value = '';
+    holidayLoaded = false; // force refresh
     await loadAllLoads();
     renderLoads();
   } catch(e) {
-    showToast('Could not save. Check sheet permissions.', 'error');
+    showToast('Could not save. Check Apps Script deployment.', 'error');
     console.error(e);
   }
 }
@@ -1058,8 +1006,12 @@ async function addLoad() {
 async function deleteLoad(rowNum) {
   if (!confirm('Remove this load from the planner?')) return;
   try {
-    // Clear the row by writing blanks
-    await sheetsUpdate(`${PLANNER_SHEET}!A${rowNum}:H${rowNum}`, [['','','','','','','','']]);
+    await scriptPost({
+      action: 'update',
+      sheet:  PLANNER_SHEET,
+      range:  `${PLANNER_SHEET}!A${rowNum}:H${rowNum}`,
+      values: [['','','','','','','','']]
+    });
     showToast('Load removed.', 'success');
     await loadAllLoads();
     renderLoads();
@@ -1068,9 +1020,9 @@ async function deleteLoad(rowNum) {
   }
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  RENDER TEAM LOG
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 async function renderLog() {
   document.getElementById('week-label-log').textContent = fmtWeekRange(logWeekStart);
   await loadAllLoads();
@@ -1114,7 +1066,8 @@ async function renderLog() {
           <option value="DF">DF</option>
           <option value="AS">AS</option>
         </select>
-        <input type="time" class="log-time-input" id="time-${l.rowNum}" value="${new Date().toTimeString().slice(0,5)}">
+        <input type="time" class="log-time-input" id="time-${l.rowNum}"
+          value="${new Date().toTimeString().slice(0,5)}">
       </div>
       <button class="btn-log" onclick="logLoad(${l.rowNum})">Log Start</button>
     </div>`;
@@ -1124,24 +1077,26 @@ async function renderLog() {
 async function logLoad(rowNum) {
   const init = document.getElementById(`sel-${rowNum}`).value;
   const time = document.getElementById(`time-${rowNum}`).value;
-
   if (!init) { showToast('Select your initials first.', 'error'); return; }
-
   const today = new Date().toLocaleDateString('en-GB');
-
   try {
-    await sheetsUpdate(`${PLANNER_SHEET}!E${rowNum}:G${rowNum}`, [[init, time, today]]);
+    await scriptPost({
+      action: 'update',
+      sheet:  PLANNER_SHEET,
+      range:  `${PLANNER_SHEET}!E${rowNum}:G${rowNum}`,
+      values: [[init, time, today]]
+    });
     showToast(`Load logged to ${init} ✓`, 'success');
     await loadAllLoads();
     renderLog();
   } catch(e) {
-    showToast('Could not log. Check sheet permissions.', 'error');
+    showToast('Could not log. Check Apps Script deployment.', 'error');
   }
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  NAVIGATION
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 function shiftWeek(n)      { currentWeekStart = addDays(currentWeekStart, n*7); renderPrediction(); }
 function shiftWeekLoads(n) { loadsWeekStart   = addDays(loadsWeekStart,   n*7); renderLoads(); }
 function shiftWeekLog(n)   { logWeekStart     = addDays(logWeekStart,     n*7); renderLog(); }
@@ -1150,19 +1105,19 @@ function shiftToCurrentWeek()      { currentWeekStart = getMonday(new Date()); r
 function shiftToCurrentWeekLoads() { loadsWeekStart   = getMonday(new Date()); renderLoads(); }
 function shiftToCurrentWeekLog()   { logWeekStart     = getMonday(new Date()); renderLog(); }
 
-function showView(v) {
+function showView(v, btn) {
   document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById(`view-${v}`).classList.add('active');
-  event.target.classList.add('active');
+  if (btn) btn.classList.add('active');
   if (v === 'predict') renderPrediction();
   if (v === 'loads')   renderLoads();
   if (v === 'log')     renderLog();
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  TOAST
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 function showToast(msg, type='success') {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -1170,10 +1125,12 @@ function showToast(msg, type='success') {
   setTimeout(() => { t.className = ''; }, 3000);
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════
 //  INIT
-// ═══════════════════════════════════════════════════
-document.getElementById('header-date').textContent = new Date().toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
+// ═══════════════════════════════════════════
+document.getElementById('header-date').textContent =
+  new Date().toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
+
 renderPrediction();
 </script>
 </body>
