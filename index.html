@@ -872,7 +872,8 @@ async function renderPrediction() {
   await loadHolidays();
   await loadAllLoads();
 
-  const { total: capacity, perPerson } = calcCapacity(currentWeekStart);
+  const programmingWeek = addDays(currentWeekStart, -7);
+  const { total: capacity, perPerson } = calcCapacity(programmingWeek);
   const loads    = getLoadsForWeek(currentWeekStart);
   const totalStairs = loads.reduce((s, l) => s + l.stairs, 0);
   const surplus  = capacity - totalStairs;
@@ -930,7 +931,7 @@ async function renderPrediction() {
     <div class="cap-bar-label" style="margin-top:6px;"><span></span><span>${capacity} stairs available</span></div>`;
 
   // Team breakdown table
-  const days = weekDays(currentWeekStart);
+  const days = weekDays(programmingWeek);
   const dayLabels = ['Mon','Tue','Wed','Thu','Fri'];
 
   let rows = Object.entries(perPerson).map(([init, data]) => {
