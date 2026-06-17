@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -566,7 +565,7 @@
 // ═══════════════════════════════════════════
 const API_KEY        = 'AIzaSyC7LqaHIyCp7qcHSbrC8EjufPD_qGiZD-M';
 const SHEET_ID       = '1NYHtbL_-mepijGGXT7LRetqhEttLyaMYzOcKHzPzvB8';
-const PLANNER_SHEET  = '2026';
+const PLANNER_SHEET  = 'Production_Planner';
 const SCRIPT_URL     = 'https://script.google.com/macros/s/AKfycbySSKSp6tvCdxxHQ0HscEgALFkIimWn1lVW06Ojod0BAE22l_DfSpz8UB8As0IpCFspmQ/exec';
 
 // Team: fullDay = Mon–Thu capacity, friday = Friday capacity
@@ -783,20 +782,20 @@ function calcCapacity(programmingWeek) {
 // ═══════════════════════════════════════════
 async function loadAllLoads() {
   try {
-    const rows = await sheetsGet(`${PLANNER_SHEET}!A:H`);
+    const rows = await sheetsGet(`${PLANNER_SHEET}!A:F`);
     if (!rows || rows.length < 2) { allLoads = []; return; }
     allLoads = rows.slice(1)
       .filter(r => r && r[0]) // skip blank rows
       .map((r, i) => ({
         rowNum:       i + 2,
-        loadNum:      r[0] || '',
-        stairs:       parseInt(r[1]) || 0,
-        deliveryDate: r[2] || '',
-        addedDate:    r[3] || '',
-        assignedTo:   r[4] || '',
-        startTime:    r[5] || '',
-        loggedDate:   r[6] || '',
-        lateFlag:     r[7] || '',
+        loadNum:      r[0] || '',        // Column A: LOAD No
+        stairs:       parseInt(r[1]) || 0, // Column B: STAIR PARTS NUMBER OF STAIRS
+        deliveryDate: r[2] || '',         // Column C: DELIVERY DATE
+        addedDate:    r[3] || '',         // Column D: OFFICE START DATE
+        assignedTo:   r[4] || '',         // Column E: INITIALS
+        startTime:    r[5] || '',         // Column F: START TIME 24HR
+        loggedDate:   '',                 // No column for this anymore
+        lateFlag:     '',                 // No column for this anymore
       }));
   } catch(e) {
     console.error('Load read failed:', e);
@@ -964,6 +963,9 @@ async function renderLoads() {
   el.innerHTML = html;
 }
 
+// ═══════════════════════════════════════════
+//  ADD LOAD - UPDATED FOR 6 COLUMNS
+// ═══════════════════════════════════════════
 async function addLoad() {
   const loadNum  = document.getElementById('inp-load-num').value.trim();
   const stairs   = parseInt(document.getElementById('inp-stairs').value);
@@ -977,18 +979,13 @@ async function addLoad() {
   const dObj    = new Date(delivery + 'T00:00:00');
   const fmtDel  = `${String(dObj.getDate()).padStart(2,'0')}/${String(dObj.getMonth()+1).padStart(2,'0')}/${dObj.getFullYear()}`;
 
-  // Late flag — if other loads already exist for this delivery week, flag as LATE
-  const weekMon          = getMonday(dObj);
-  const existingForWeek  = getLoadsForWeek(weekMon);
-  const lateFlag         = existingForWeek.length > 0 ? 'LATE' : '';
-
   const today = new Date().toLocaleDateString('en-GB');
 
   try {
     await scriptPost({
       action: 'append',
       sheet:  PLANNER_SHEET,
-      row:    [loadNum, stairs, fmtDel, today, '', '', '', lateFlag]
+      row:    [loadNum, stairs, fmtDel, today, '', '']  // Only 6 columns now
     });
     showToast('Load added ✓', 'success');
     document.getElementById('inp-load-num').value = '';
@@ -997,24 +994,29 @@ async function addLoad() {
     holidayLoaded = false; // force refresh
     await loadAllLoads();
     renderLoads();
+    renderPrediction(); // Update prediction too
   } catch(e) {
     showToast('Could not save. Check Apps Script deployment.', 'error');
     console.error(e);
   }
 }
 
+// ═══════════════════════════════════════════
+//  DELETE LOAD - UPDATED FOR 6 COLUMNS
+// ═══════════════════════════════════════════
 async function deleteLoad(rowNum) {
   if (!confirm('Remove this load from the planner?')) return;
   try {
     await scriptPost({
       action: 'update',
       sheet:  PLANNER_SHEET,
-      range:  `${PLANNER_SHEET}!A${rowNum}:H${rowNum}`,
-      values: [['','','','','','','','']]
+      range:  `${PLANNER_SHEET}!A${rowNum}:F${rowNum}`,  // Changed to F
+      values: [['','','','','','']]  // 6 empty values
     });
     showToast('Load removed.', 'success');
     await loadAllLoads();
     renderLoads();
+    renderPrediction(); // Update prediction too
   } catch(e) {
     showToast('Could not remove load.', 'error');
   }
@@ -1047,7 +1049,7 @@ async function renderLog() {
             <div class="initials-badge">${l.assignedTo}</div>
             <span style="font-size:13px;">${l.assignedTo} · Started ${l.startTime || 'unknown time'}</span>
           </div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;">Logged ${l.loggedDate}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;">Started ${l.addedDate}</div>
         </div>
         <button class="btn-log logged" disabled>Logged ✓</button>
       </div>`;
@@ -1074,21 +1076,24 @@ async function renderLog() {
   }).join('');
 }
 
+// ═══════════════════════════════════════════
+//  LOG LOAD - UPDATED FOR 6 COLUMNS
+// ═══════════════════════════════════════════
 async function logLoad(rowNum) {
   const init = document.getElementById(`sel-${rowNum}`).value;
   const time = document.getElementById(`time-${rowNum}`).value;
   if (!init) { showToast('Select your initials first.', 'error'); return; }
-  const today = new Date().toLocaleDateString('en-GB');
   try {
     await scriptPost({
       action: 'update',
       sheet:  PLANNER_SHEET,
-      range:  `${PLANNER_SHEET}!E${rowNum}:G${rowNum}`,
-      values: [[init, time, today]]
+      range:  `${PLANNER_SHEET}!E${rowNum}:F${rowNum}`,  // Only E and F
+      values: [[init, time]]  // Only 2 values
     });
     showToast(`Load logged to ${init} ✓`, 'success');
     await loadAllLoads();
     renderLog();
+    renderPrediction(); // Update prediction too
   } catch(e) {
     showToast('Could not log. Check Apps Script deployment.', 'error');
   }
