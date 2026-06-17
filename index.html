@@ -782,7 +782,7 @@ function calcCapacity(programmingWeek) {
 // ═══════════════════════════════════════════
 async function loadAllLoads() {
   try {
-    const rows = await sheetsGet(`${PLANNER_SHEET}!A:F`);
+    const rows = await sheetsGet(`${PLANNER_SHEET}!A1:F`);
     if (!rows || rows.length < 2) { allLoads = []; return; }
     allLoads = rows.slice(1)
       .filter(r => r && r[0]) // skip blank rows
