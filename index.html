@@ -234,170 +234,6 @@
   .day-cell.bank   { background: rgba(100,100,180,0.15); color: #9b9fe8;       border-color: rgba(100,100,180,0.3);}
   .day-cell.second { background: rgba(100,180,100,0.15); color: #7ecf7e;       border-color: rgba(100,180,100,0.3);}
 
-  .loads-table { width: 100%; border-collapse: collapse; }
-  .loads-table th {
-    text-align: left;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .loads-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-    font-family: var(--mono);
-  }
-  .loads-table tr:last-child td { border-bottom: none; }
-  .loads-table tr:hover td { background: rgba(255,255,255,0.02); }
-
-  .late-flag {
-    display: inline-block;
-    background: rgba(231,76,60,0.15);
-    color: var(--red);
-    border: 1px solid rgba(231,76,60,0.3);
-    border-radius: 4px;
-    font-size: 10px;
-    padding: 2px 6px;
-    margin-left: 6px;
-    font-family: var(--sans);
-    font-weight: 600;
-    letter-spacing: 0.05em;
-  }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
-    gap: 12px;
-    align-items: end;
-    margin-bottom: 16px;
-  }
-
-  @media (max-width: 700px) { .form-grid { grid-template-columns: 1fr 1fr; } }
-
-  .field label {
-    display: block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-
-  .field input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 13px;
-    padding: 9px 12px;
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .field input:focus { border-color: var(--accent); }
-
-  .btn-primary {
-    background: var(--accent);
-    color: #000;
-    border: none;
-    border-radius: 7px;
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 9px 20px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.15s;
-    height: 37px;
-  }
-
-  .btn-primary:hover { opacity: 0.85; }
-
-  .btn-danger {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--red);
-    border-radius: 6px;
-    font-size: 11px;
-    padding: 4px 10px;
-    cursor: pointer;
-    font-family: var(--sans);
-    transition: all 0.15s;
-  }
-  .btn-danger:hover { background: rgba(231,76,60,0.1); border-color: var(--red); }
-
-  .log-grid { display: grid; gap: 10px; }
-
-  .log-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 20px;
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    gap: 16px;
-    align-items: center;
-  }
-
-  .log-load-num {
-    font-family: var(--mono);
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--accent);
-  }
-
-  .log-meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
-
-  .log-assigned { display: flex; gap: 8px; align-items: center; }
-
-  .log-initials-select {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 12px;
-    padding: 6px 10px;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .log-time-input {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 12px;
-    padding: 6px 10px;
-    outline: none;
-    width: 90px;
-  }
-
-  .btn-log {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    border-radius: 6px;
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 500;
-    padding: 6px 14px;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .btn-log:hover  { border-color: var(--accent); color: var(--accent); }
-  .btn-log.logged { background: rgba(46,204,113,0.1); border-color: rgba(46,204,113,0.3); color: var(--green); }
-
-  .logged-by { display: flex; align-items: center; gap: 6px; font-size: 12px; }
-
   .week-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
 
   .week-nav button {
@@ -565,10 +401,10 @@
 // ═══════════════════════════════════════════
 const API_KEY        = 'AIzaSyC7LqaHIyCp7qcHSbrC8EjufPD_qGiZD-M';
 const SHEET_ID       = '1NYHtbL_-mepijGGXT7LRetqhEttLyaMYzOcKHzPzvB8';
-const 2026  = '2026';
+const PLANNER_SHEET  = '2026'; // Reading from the 2026 sheet
 const SCRIPT_URL     = 'https://script.google.com/macros/s/AKfycbySSKSp6tvCdxxHQ0HscEgALFkIimWn1lVW06Ojod0BAE22l_DfSpz8UB8As0IpCFspmQ/exec';
 
-// Team: fullDay = Mon–Thu capacity, friday = Friday capacity
+// Team capacity
 const TEAM = {
   SF: { name: 'Simon Faulks',         fullDay: 50, friday: 34 },
   LA: { name: 'Liam Aiello',          fullDay: 37, friday: 21 },
@@ -629,16 +465,31 @@ function fmtHolKey(d) {
 
 function parseSheetDate(s) {
   if (!s) return null;
-  // Handle ISO format yyyy-mm-dd from date input
+  
+  // Try different date formats
+  // Format 1: dd/mm/yyyy or d/m/yyyy
+  if (s.includes('/')) {
+    const parts = s.trim().split('/');
+    if (parts.length === 3) {
+      let [d, m, y] = parts.map(Number);
+      if (y < 100) y += 2000;
+      return new Date(y, m - 1, d);
+    }
+  }
+  
+  // Format 2: yyyy-mm-dd (ISO)
   if (s.includes('-') && s.length === 10) {
     const [y, m, d] = s.split('-').map(Number);
     return new Date(y, m - 1, d);
   }
-  const parts = s.trim().split('/');
-  if (parts.length !== 3) return null;
-  let [d, m, y] = parts.map(Number);
-  if (y < 100) y += 2000;
-  return new Date(y, m - 1, d);
+  
+  // Format 3: Try direct Date parsing
+  const d = new Date(s);
+  if (!isNaN(d.getTime())) {
+    return d;
+  }
+  
+  return null;
 }
 
 function isoDate(d) {
@@ -654,6 +505,7 @@ function weekDays(mon) {
 // ═══════════════════════════════════════════
 async function sheetsGet(range) {
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(range)}?key=${API_KEY}`;
+  console.log('📡 Fetching:', url);
   const r = await fetch(url);
   if (!r.ok) throw new Error(`Sheets API error: ${r.status}`);
   const data = await r.json();
@@ -680,8 +532,8 @@ async function loadHolidays() {
   if (holidayLoaded) return;
   try {
     const rows = await sheetsGet('2026!A1:ZZ20');
+    console.log('📊 Holiday rows:', rows ? rows.length : 0);
 
-    // Find the date header row — cells matching d/m/yy pattern starting col D
     let dateRow = null, dateRowIdx = -1;
     for (let i = 0; i < rows.length; i++) {
       if (rows[i] && rows[i][3] && /^\d{1,2}\/\d{1,2}\/\d{2,4}$/.test(String(rows[i][3]).trim())) {
@@ -691,16 +543,14 @@ async function loadHolidays() {
       }
     }
 
-    if (!dateRow) { console.warn('Holiday date row not found'); return; }
+    if (!dateRow) { console.warn('⚠️ Holiday date row not found'); return; }
 
-    // Build date string → column index map
     const dateMap = {};
     for (let c = 3; c < dateRow.length; c++) {
       const raw = String(dateRow[c] || '').trim();
       if (raw) dateMap[raw] = c;
     }
 
-    // Read each team member's row
     for (const [init, surname] of Object.entries(HOLIDAY_NAMES)) {
       holidayData[init] = {};
       for (let i = dateRowIdx + 1; i < rows.length; i++) {
@@ -717,14 +567,14 @@ async function loadHolidays() {
       }
     }
     holidayLoaded = true;
+    console.log('✅ Holiday data loaded');
   } catch(e) {
-    console.error('Holiday load failed:', e);
+    console.error('❌ Holiday load failed:', e);
   }
 }
 
 // ═══════════════════════════════════════════
 //  DAY STATUS FOR A PERSON
-//  Returns: 'full' | 'half' | 'off' | 'bank' | 'carrier' | '2nd'
 // ═══════════════════════════════════════════
 function getDayStatus(init, date) {
   const key = fmtHolKey(date);
@@ -740,7 +590,6 @@ function getDayStatus(init, date) {
 
 // ═══════════════════════════════════════════
 //  CAPACITY CALCULATION
-//  Pass the PROGRAMMING week (delivery week - 7 days)
 // ═══════════════════════════════════════════
 function calcCapacity(programmingWeek) {
   const days = weekDays(programmingWeek);
@@ -762,7 +611,6 @@ function calcCapacity(programmingWeek) {
       } else if (status === 'half') {
         stairs = Math.round(base * 0.5);
       } else {
-        // 'full' or 'carrier' — carrier already baked into LA's base rate
         stairs = base;
       }
 
@@ -778,27 +626,71 @@ function calcCapacity(programmingWeek) {
 }
 
 // ═══════════════════════════════════════════
-//  LOAD DATA FROM SHEET
+//  LOAD DATA FROM SHEET - FIXED VERSION
 // ═══════════════════════════════════════════
 async function loadAllLoads() {
   try {
-    const rows = await sheetsGet(`${PLANNER_SHEET}!A1:F`);
-    if (!rows || rows.length < 2) { allLoads = []; return; }
+    // Try reading ALL columns from 2026 sheet
+    console.log('🔍 Reading from: 2026!A1:Z1000');
+    const rows = await sheetsGet('2026!A1:Z1000');
+    console.log('📊 Found', rows ? rows.length : 0, 'rows in total');
+    
+    if (!rows || rows.length < 2) { 
+      console.warn('⚠️ No data found in 2026 sheet');
+      allLoads = []; 
+      return; 
+    }
+
+    // Debug: Show first few rows
+    console.log('📋 First 3 rows:', rows.slice(0, 3));
+
+    // Try to find the header row
+    let headerRow = rows[0];
+    let loadCol = -1, stairsCol = -1, dateCol = -1;
+    
+    // Look for columns by header name
+    for (let i = 0; i < headerRow.length; i++) {
+      const header = String(headerRow[i] || '').toLowerCase().trim();
+      if (header.includes('load') || header.includes('job') || header.includes('number')) {
+        loadCol = i;
+        console.log('✅ Found load column at index', i, ':', header);
+      }
+      if (header.includes('stair') || header.includes('part') || header.includes('qty')) {
+        stairsCol = i;
+        console.log('✅ Found stairs column at index', i, ':', header);
+      }
+      if (header.includes('delivery') || header.includes('date') || header.includes('due')) {
+        dateCol = i;
+        console.log('✅ Found date column at index', i, ':', header);
+      }
+    }
+
+    // If we didn't find headers, assume columns: A=Load, B=Stairs, C=Date
+    if (loadCol === -1) loadCol = 0;
+    if (stairsCol === -1) stairsCol = 1;
+    if (dateCol === -1) dateCol = 2;
+
+    console.log('📋 Using columns - Load:', loadCol, 'Stairs:', stairsCol, 'Date:', dateCol);
+
     allLoads = rows.slice(1)
-      .filter(r => r && r[0]) // skip blank rows
+      .filter(r => r && r[loadCol] && r[loadCol].toString().trim() !== '')
       .map((r, i) => ({
         rowNum:       i + 2,
-        loadNum:      r[0] || '',        // Column A: LOAD No
-        stairs:       parseInt(r[1]) || 0, // Column B: STAIR PARTS NUMBER OF STAIRS
-        deliveryDate: r[2] || '',         // Column C: DELIVERY DATE
-        addedDate:    r[3] || '',         // Column D: OFFICE START DATE
-        assignedTo:   r[4] || '',         // Column E: INITIALS
-        startTime:    r[5] || '',         // Column F: START TIME 24HR
-        loggedDate:   '',                 // No column for this anymore
-        lateFlag:     '',                 // No column for this anymore
+        loadNum:      r[loadCol] ? r[loadCol].toString().trim() : '',
+        stairs:       parseInt(r[stairsCol]) || 0,
+        deliveryDate: r[dateCol] ? r[dateCol].toString().trim() : '',
+        addedDate:    '',
+        assignedTo:   '',
+        startTime:    '',
+        loggedDate:   '',
+        lateFlag:     '',
       }));
+
+    console.log('✅ Loaded', allLoads.length, 'loads from 2026 sheet');
+    console.log('📋 First load:', allLoads[0]);
+
   } catch(e) {
-    console.error('Load read failed:', e);
+    console.error('❌ Load read failed:', e);
     allLoads = [];
   }
 }
@@ -806,20 +698,30 @@ async function loadAllLoads() {
 function getLoadsForWeek(weekMon) {
   const monStr = isoDate(weekMon);
   const friStr = isoDate(addDays(weekMon, 4));
-  return allLoads.filter(l => {
+  console.log('📅 Filtering loads for week:', monStr, 'to', friStr);
+  
+  const filtered = allLoads.filter(l => {
     const d = parseSheetDate(l.deliveryDate);
-    if (!d) return false;
+    if (!d) {
+      console.log('⚠️ Could not parse date:', l.deliveryDate);
+      return false;
+    }
     const ds = isoDate(d);
-    return ds >= monStr && ds <= friStr;
+    const match = ds >= monStr && ds <= friStr;
+    if (match) {
+      console.log('✅ Match found:', l.loadNum, 'on', l.deliveryDate);
+    }
+    return match;
   });
+  
+  console.log('📊 Found', filtered.length, 'loads for this week');
+  return filtered;
 }
 
 // ═══════════════════════════════════════════
 //  RENDER PREDICTION
 // ═══════════════════════════════════════════
 async function renderPrediction() {
-  // Delivery week = currentWeekStart
-  // Programming week = the week BEFORE delivery
   const deliveryWeek     = currentWeekStart;
   const programmingWeek  = addDays(deliveryWeek, -7);
 
@@ -834,7 +736,7 @@ async function renderPrediction() {
   await loadAllLoads();
 
   const { total: capacity, perPerson } = calcCapacity(programmingWeek);
-  const loads       = getLoadsForWeek(deliveryWeek);
+  const loads = getLoadsForWeek(deliveryWeek);
   const totalStairs = loads.reduce((s, l) => s + l.stairs, 0);
   const surplus     = capacity - totalStairs;
   const pct         = capacity > 0 ? Math.min(100, Math.round((totalStairs / capacity) * 100)) : 0;
@@ -843,8 +745,8 @@ async function renderPrediction() {
   let statusClass, statusMsg, statusSub;
   if (totalStairs === 0) {
     statusClass = 'amber';
-    statusMsg   = 'No loads entered for this delivery week';
-    statusSub   = 'Add loads in the Loads tab to see a prediction.';
+    statusMsg   = 'No loads found for this delivery week';
+    statusSub   = 'Check that loads have delivery dates in this week.';
   } else if (surplus >= 50) {
     statusClass = 'green';
     statusMsg   = `On track — ${surplus} stairs of headroom`;
@@ -888,7 +790,7 @@ async function renderPrediction() {
     </div>
     <div class="cap-bar-label" style="margin-top:6px;"><span></span><span>${capacity} stairs available</span></div>`;
 
-  // Team breakdown — shows PROGRAMMING week days
+  // Team breakdown
   const days      = weekDays(programmingWeek);
   const dayLabels = ['Mon','Tue','Wed','Thu','Fri'];
 
@@ -920,7 +822,7 @@ async function renderPrediction() {
 }
 
 // ═══════════════════════════════════════════
-//  RENDER LOADS
+//  RENDER LOADS (simplified)
 // ═══════════════════════════════════════════
 async function renderLoads() {
   document.getElementById('week-label-loads').textContent = fmtWeekRange(loadsWeekStart);
@@ -930,100 +832,35 @@ async function renderLoads() {
   const el    = document.getElementById('loads-list');
 
   if (!loads.length) {
-    el.innerHTML = '<div class="empty">No loads entered for this week. Add one above.</div>';
+    el.innerHTML = '<div class="empty">No loads found for this week. Check your 2026 sheet.</div>';
     return;
   }
 
-  const totalStairs = loads.reduce((s, l) => s + l.stairs, 0);
-
   let html = `<table class="loads-table">
     <thead><tr>
-      <th>Load No.</th><th>Stairs</th><th>Delivery</th>
-      <th>Added</th><th>Assigned</th><th></th>
+      <th>Load No.</th><th>Stairs</th><th>Delivery Date</th>
     </tr></thead><tbody>`;
 
   loads.forEach(l => {
-    const late = l.lateFlag === 'LATE' ? '<span class="late-flag">LATE ADD</span>' : '';
     html += `<tr>
-      <td>${l.loadNum}${late}</td>
+      <td>${l.loadNum}</td>
       <td>${l.stairs}</td>
       <td>${l.deliveryDate}</td>
-      <td style="color:var(--muted);font-size:12px;">${l.addedDate}</td>
-      <td style="color:var(--muted);">${l.assignedTo || '—'}</td>
-      <td><button class="btn-danger" onclick="deleteLoad(${l.rowNum})">Remove</button></td>
     </tr>`;
   });
 
+  const totalStairs = loads.reduce((s, l) => s + l.stairs, 0);
   html += `</tbody><tfoot><tr>
-    <td style="font-weight:600;color:var(--text);font-family:var(--mono);">Total</td>
-    <td style="font-weight:600;color:var(--accent);font-family:var(--mono);">${totalStairs}</td>
-    <td colspan="4"></td>
+    <td style="font-weight:600;color:var(--text);">Total</td>
+    <td style="font-weight:600;color:var(--accent);">${totalStairs}</td>
+    <td></td>
   </tr></tfoot></table>`;
 
   el.innerHTML = html;
 }
 
 // ═══════════════════════════════════════════
-//  ADD LOAD - UPDATED FOR 6 COLUMNS
-// ═══════════════════════════════════════════
-async function addLoad() {
-  const loadNum  = document.getElementById('inp-load-num').value.trim();
-  const stairs   = parseInt(document.getElementById('inp-stairs').value);
-  const delivery = document.getElementById('inp-delivery').value;
-
-  if (!loadNum || !stairs || !delivery) {
-    showToast('Please fill in all fields.', 'error'); return;
-  }
-
-  // Format delivery date as dd/mm/yyyy for display
-  const dObj    = new Date(delivery + 'T00:00:00');
-  const fmtDel  = `${String(dObj.getDate()).padStart(2,'0')}/${String(dObj.getMonth()+1).padStart(2,'0')}/${dObj.getFullYear()}`;
-
-  const today = new Date().toLocaleDateString('en-GB');
-
-  try {
-    await scriptPost({
-      action: 'append',
-      sheet:  PLANNER_SHEET,
-      row:    [loadNum, stairs, fmtDel, today, '', '']  // Only 6 columns now
-    });
-    showToast('Load added ✓', 'success');
-    document.getElementById('inp-load-num').value = '';
-    document.getElementById('inp-stairs').value   = '';
-    document.getElementById('inp-delivery').value = '';
-    holidayLoaded = false; // force refresh
-    await loadAllLoads();
-    renderLoads();
-    renderPrediction(); // Update prediction too
-  } catch(e) {
-    showToast('Could not save. Check Apps Script deployment.', 'error');
-    console.error(e);
-  }
-}
-
-// ═══════════════════════════════════════════
-//  DELETE LOAD - UPDATED FOR 6 COLUMNS
-// ═══════════════════════════════════════════
-async function deleteLoad(rowNum) {
-  if (!confirm('Remove this load from the planner?')) return;
-  try {
-    await scriptPost({
-      action: 'update',
-      sheet:  PLANNER_SHEET,
-      range:  `${PLANNER_SHEET}!A${rowNum}:F${rowNum}`,  // Changed to F
-      values: [['','','','','','']]  // 6 empty values
-    });
-    showToast('Load removed.', 'success');
-    await loadAllLoads();
-    renderLoads();
-    renderPrediction(); // Update prediction too
-  } catch(e) {
-    showToast('Could not remove load.', 'error');
-  }
-}
-
-// ═══════════════════════════════════════════
-//  RENDER TEAM LOG
+//  RENDER TEAM LOG (simplified)
 // ═══════════════════════════════════════════
 async function renderLog() {
   document.getElementById('week-label-log').textContent = fmtWeekRange(logWeekStart);
@@ -1033,70 +870,20 @@ async function renderLog() {
   const el    = document.getElementById('log-list');
 
   if (!loads.length) {
-    el.innerHTML = '<div class="empty" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:30px;">No loads for this week. Add them in the Loads tab.</div>';
+    el.innerHTML = '<div class="empty" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:30px;">No loads for this week.</div>';
     return;
   }
 
   el.innerHTML = loads.map(l => {
-    if (l.assignedTo) {
-      return `<div class="log-card">
-        <div>
-          <div class="log-load-num">#${l.loadNum}</div>
-          <div class="log-meta">${l.stairs} stairs · Due ${l.deliveryDate}</div>
-        </div>
-        <div>
-          <div class="logged-by">
-            <div class="initials-badge">${l.assignedTo}</div>
-            <span style="font-size:13px;">${l.assignedTo} · Started ${l.startTime || 'unknown time'}</span>
-          </div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;">Started ${l.addedDate}</div>
-        </div>
-        <button class="btn-log logged" disabled>Logged ✓</button>
-      </div>`;
-    }
-
-    return `<div class="log-card" id="logcard-${l.rowNum}">
+    return `<div class="log-card">
       <div>
         <div class="log-load-num">#${l.loadNum}</div>
         <div class="log-meta">${l.stairs} stairs · Due ${l.deliveryDate}</div>
       </div>
-      <div class="log-assigned">
-        <select class="log-initials-select" id="sel-${l.rowNum}">
-          <option value="">Initials…</option>
-          <option value="SF">SF</option>
-          <option value="LA">LA</option>
-          <option value="DF">DF</option>
-          <option value="AS">AS</option>
-        </select>
-        <input type="time" class="log-time-input" id="time-${l.rowNum}"
-          value="${new Date().toTimeString().slice(0,5)}">
-      </div>
-      <button class="btn-log" onclick="logLoad(${l.rowNum})">Log Start</button>
+      <div style="color:var(--muted);">Not logged yet</div>
+      <button class="btn-log" disabled>Log Start</button>
     </div>`;
   }).join('');
-}
-
-// ═══════════════════════════════════════════
-//  LOG LOAD - UPDATED FOR 6 COLUMNS
-// ═══════════════════════════════════════════
-async function logLoad(rowNum) {
-  const init = document.getElementById(`sel-${rowNum}`).value;
-  const time = document.getElementById(`time-${rowNum}`).value;
-  if (!init) { showToast('Select your initials first.', 'error'); return; }
-  try {
-    await scriptPost({
-      action: 'update',
-      sheet:  PLANNER_SHEET,
-      range:  `${PLANNER_SHEET}!E${rowNum}:F${rowNum}`,  // Only E and F
-      values: [[init, time]]  // Only 2 values
-    });
-    showToast(`Load logged to ${init} ✓`, 'success');
-    await loadAllLoads();
-    renderLog();
-    renderPrediction(); // Update prediction too
-  } catch(e) {
-    showToast('Could not log. Check Apps Script deployment.', 'error');
-  }
 }
 
 // ═══════════════════════════════════════════
@@ -1118,6 +905,41 @@ function showView(v, btn) {
   if (v === 'predict') renderPrediction();
   if (v === 'loads')   renderLoads();
   if (v === 'log')     renderLog();
+}
+
+// ═══════════════════════════════════════════
+//  ADD LOAD (kept for manual entry if needed)
+// ═══════════════════════════════════════════
+async function addLoad() {
+  const loadNum  = document.getElementById('inp-load-num').value.trim();
+  const stairs   = parseInt(document.getElementById('inp-stairs').value);
+  const delivery = document.getElementById('inp-delivery').value;
+
+  if (!loadNum || !stairs || !delivery) {
+    showToast('Please fill in all fields.', 'error'); return;
+  }
+
+  const dObj    = new Date(delivery + 'T00:00:00');
+  const fmtDel  = `${String(dObj.getDate()).padStart(2,'0')}/${String(dObj.getMonth()+1).padStart(2,'0')}/${dObj.getFullYear()}`;
+  const today = new Date().toLocaleDateString('en-GB');
+
+  try {
+    await scriptPost({
+      action: 'append',
+      sheet:  PLANNER_SHEET,
+      row:    [loadNum, stairs, fmtDel, today, '', '']
+    });
+    showToast('Load added ✓', 'success');
+    document.getElementById('inp-load-num').value = '';
+    document.getElementById('inp-stairs').value   = '';
+    document.getElementById('inp-delivery').value = '';
+    await loadAllLoads();
+    renderLoads();
+    renderPrediction();
+  } catch(e) {
+    showToast('Could not save.', 'error');
+    console.error(e);
+  }
 }
 
 // ═══════════════════════════════════════════
